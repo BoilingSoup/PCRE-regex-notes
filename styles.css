@@ -185,6 +185,10 @@ em {
     left: -2px;
   }
 
+    ul span {
+    font-size: 0.6rem;
+  }
+
   .symbol {
     width: 17%;
   }
