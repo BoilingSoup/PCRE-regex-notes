@@ -8,18 +8,47 @@
   z-index: 0;
 }
 
+h1 {
+  color: var(--symbol);
+  background: #10143c;
+  font-weight: 400;
+  padding: 0.2rem 0;
+}
+
 ul {
   padding: 0px;
+  list-style: none;
   list-style-position: inside;
+}
+
+ul li::before {
+  content: '\2022';
+  color: var(--lightblue);
+  display: inline-block;
+  width: 1em;
+  margin-left: -0.0em;
 }
 
 li > span {
   position: relative;
   left: 1px;
 }
+
+em {
+  color: var(--default);
+}
 /*******************************/
 
 /*************Vars**************/
+:root {
+  --navy: hsla(224, 75%, 12%, 0.89);
+  --lightblue: hsla(189, 75%, 59%, 0.89);
+  --even-bg: #373c4f;
+  --odd-bg: #2e3347;
+  --symbol: #a35062;
+  --default: white;
+}
+
 p {
   --big-font: 1.4rem;
 }
@@ -55,6 +84,7 @@ main > :first-child {
 .symbol {
   width: 13%;
   padding: var(--cell-padding);
+  color: var(--symbol);
 }
 
 .category {
@@ -69,8 +99,21 @@ main > :first-child {
   margin: 0 1rem;
 }
 
+.description p {
+  color: var(--default);
+}
+
 .example {
   font-size: var(--big-font);
+  color: var(--default);
+}
+
+main > :nth-child(even) {
+  background: var(--even-bg);
+}
+
+main > :nth-child(odd) {
+  background: var(--odd-bg);
 }
 
 ul {
@@ -80,6 +123,19 @@ ul {
   justify-content: center;
   flex-direction: column;
   margin: 0 1rem;
+}
+
+li > span {
+  color: var(--default);
+}
+
+#sticky-bar {
+  background: var(--navy);
+  color: var(--lightblue);
+}
+
+#sticky-bar .symbol {
+  color: var(--lightblue);
 }
 
 @media (max-width: 860px) {
@@ -139,9 +195,20 @@ em {
 }
 
 @media (max-width: 900px) {
-  .example,
-  .font--big {
+  .example {
     font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 750px) {
+  .font--big {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .font--big {
+    font-size: 1rem;
   }
 }
 
@@ -158,7 +225,8 @@ em {
 @media (max-width: 590px) {
   p,
   ul span,
-  h4 {
+  h4,
+  .font--big {
     font-size: 0.8rem;
   }
 }
@@ -225,9 +293,13 @@ em {
     width: 24%;
   }
 
-  .example,
-  .font--big {
+  .example {
     font-size: 0.5rem;
+  }
+
+  .font--big {
+    font-size: 0.6rem;
+    font-weight: 500;
   }
 }
 /*******************************/
