@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1 class="center--text">PCRE Regex Cheatsheet</h1>
+    <main class="border--fat">
+      <section>
+        <div class="center--flex border-bottom--fat">
+          <div class="symbol category center--flex border--slim">
+            <h4 class="center--text">Regex</h4>
+          </div>
+          <div class="category center--flex cell--fat border--slim">
+            <h4 class="center--text big-screen">Description</h4>
+            <h4 class="center--text small-screen">Desc.</h4>
+          </div>
+          <div class="category center--flex cell--example border--slim">
+            <h4 class="center--text">Example</h4>
+          </div>
+          <div class="category center--flex cell--slim border--slim">
+            <h4 class="center--text">Matches</h4>
+          </div>
+          <div class="category center--flex cell--slim border--slim">
+            <h4 class="center--text">Does not match</h4>
+          </div>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">?</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match previous character 1 or 0 times.</p>
+            <br />
+            <p>(An optional character.)</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a?</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"aaaaa"</span></li>
+            <li><span>"bbbbb"</span></li>
+            <li><span>"&emsp;"</span></li>
+          </ul>
+        </div>
+        <div class="center--flex cell--slim border--slim">
+          <p><em>Matches with any string</em></p>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">*</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match previous character 0 or more times.</p>
+            <br />
+            <p>(An optional character. The same character may repeat.)</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a*</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"aaaaa"</span></li>
+            <li><span>"bbbbb"</span></li>
+            <li><span>"&emsp;"</span></li>
+          </ul>
+        </div>
+        <div class="center--flex cell--slim border--slim">
+          <p><em>Matches with any string</em></p>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">+</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match previous character 1 or more times.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a+</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"</span></li>
+            <li><span>"aaaaa"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"bbbbb"</span></li>
+            <li><span>"&emsp;"</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">.</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>
+              Represent 1 (any) character, but will not match a new line
+              character (\n).
+            </p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">.</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"</span></li>
+            <li><span>"9"</span></li>
+            <li><span>"&emsp;"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"\n"</span></li>
+            <li><span>""</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Escape the behavior of a following special character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\*\*\*</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"***"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"*"</span></li>
+            <li><span>"**"</span></li>
+            <li><span>"aaa"</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">^</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Indicates the beginning of a line.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">^First</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"First time"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"A First"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">$</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Indicates the end of a line.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">last.$</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"The last."<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"last week."<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">{n}</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match the previous character exactly <i>n</i> times.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a{3}</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"aaa"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"aa"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">{n,}</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match the previous character at least <i>n</i> times.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a{3,}</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"aaa"<span></li>
+            <li><span>"aaaa"<span></li>
+            <li><span>"aaaaa"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"aa"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">{n, m}</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match the previous character at least <i>n</i> but not more than <i>m</i> times.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">a{3, 4}</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"aaa"<span></li>
+            <li><span>"aaaa"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"aa"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\w</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any alphabet (case insensitive), numeric, or underscore character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\w</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"A"<span></li>
+            <li><span>"9"<span></li>
+            <li><span>"_"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>" "<span></li>
+            <li><span>"%"</span></li>
+            <li><span>"\n"</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\W</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any character that is not alaphabetic, numeric, or an underscore.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\W</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>" "<span></li>
+            <li><span>"%"</span></li>
+            <li><span>"\n"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"A"<span></li>
+            <li><span>"9"<span></li>
+            <li><span>"_"</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\d</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any numeric (digit) character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\d</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"0"<span></li>
+            <li><span>"1"</span></li>
+            <li><span>"2</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"A"<span></li>
+            <li><span>"_"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\D</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any non-numeric character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\D</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"a"<span></li>
+            <li><span>"A"</span></li>
+            <li><span>"%"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"0"<span></li>
+            <li><span>"1"<span></li>
+            <li><span>"2"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\s</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any whitespace character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\s</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>" "<span></li>
+            <li><span>"\n"</span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"1"<span></li>
+            <li><span>"a"<span></li>
+            <li><span>"%"<span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">\S</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Match to any non-whitespace character.</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example">\S</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"1"<span></li>
+            <li><span>"a"<span></li>
+            <li><span>"%"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>" "<span></li>
+            <li><span>"\n"</span></li>
+          </ul>
+        </div>
+      </section>
+      <section class="flex">
+        <div class="center--flex symbol border--slim">
+          <p class="center--text font--big">i</p>
+        </div>
+        <div class="cell--fat border--slim">
+          <div class="description">
+            <p>Append i to the end of the regular expression to make the regex search case insensitive</p>
+          </div>
+        </div>
+        <div class="center--flex cell--example border--slim">
+          <p class="example" id="i">r</p>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>"r"<span></li>
+            <li><span>"R"<span></li>
+          </ul>
+        </div>
+        <div class="cell--slim border--slim">
+          <ul>
+            <li><span>" "<span></li>
+            <li><span>"z"</span></li>
+            <li><span>"0"</span></li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

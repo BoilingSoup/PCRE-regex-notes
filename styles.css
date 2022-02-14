@@ -1,0 +1,219 @@
+/************Reset**************/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: sans-serif;
+  z-index: 0;
+}
+
+ul {
+  padding: 0px;
+  list-style-position: inside;
+}
+
+li > span {
+  position: relative;
+  left: 1px;
+}
+/*******************************/
+
+/*************Vars**************/
+p {
+  --big-font: 1.4rem;
+}
+
+div {
+  --cell-padding: 0.5rem;
+}
+/*******************************/
+
+/*************Grid**************/
+main > :first-child {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: white;
+}
+
+.cell--slim {
+  width: 22%;
+  padding: var(--cell-padding);
+}
+
+.cell--fat {
+  width: 28%;
+  padding: var(--cell-padding);
+}
+
+.cell--example {
+  width: 15%;
+  padding: var(--cell-padding);
+}
+
+.symbol {
+  width: 13%;
+  padding: var(--cell-padding);
+}
+
+.category {
+  height: 3rem;
+}
+
+.category > * {
+  display: inline-block;
+}
+
+.description {
+  margin: 0 1rem;
+}
+
+.example {
+  font-size: var(--big-font);
+}
+
+ul {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 1rem;
+}
+
+@media (max-width: 860px) {
+  ul {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 660px) {
+  ul {
+    margin: 0;
+  }
+}
+/*******************************/
+
+/***********Utility*************/
+.center--flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center--text {
+  text-align: center;
+}
+
+.border--fat {
+  border: 2px solid black;
+}
+
+.border--slim {
+  border: 1px solid black;
+}
+
+.flex {
+  display: flex;
+}
+
+.font--big {
+  font-size: var(--big-font);
+}
+/*******************************/
+
+/***********Disgusting**********/
+.example::before,
+.example::after {
+  content: '/';
+}
+
+#i::after {
+  content: '/i';
+}
+
+em {
+  display: inline-block;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .example,
+  .font--big {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .cell--fat {
+    width: 24%;
+  }
+
+  .cell--example {
+    width: 19%;
+  }
+}
+
+@media (max-width: 590px) {
+  p,
+  ul span,
+  h4 {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 445px) {
+  ul span {
+    font-size: 0.6rem;
+  }
+
+  .big-screen {
+    display: none;
+  }
+}
+
+@media (min-width: 446px) {
+  .small-screen {
+    display: none;
+  }
+}
+
+@media (max-width: 490px) {
+  li > span {
+    position: relative;
+    left: -2px;
+  }
+
+  .symbol {
+    width: 17%;
+  }
+
+  .cell--fat {
+    width: 20%;
+  }
+}
+
+@media (max-width: 550px) {
+  .description {
+    margin: 0 0.1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .description {
+    margin: 0;
+  }
+
+  .example,
+  .font--big {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 445px) {
+  .description p {
+    font-size: 0.7rem;
+  }
+}
+/*******************************/
