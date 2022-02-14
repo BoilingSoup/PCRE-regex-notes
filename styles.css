@@ -185,7 +185,7 @@ em {
     left: -2px;
   }
 
-    ul span {
+  ul span {
     font-size: 0.6rem;
   }
 
@@ -208,16 +208,26 @@ em {
   .description {
     margin: 0;
   }
-
-  .example,
-  .font--big {
-    font-size: 0.6rem;
-  }
 }
 
 @media (max-width: 445px) {
   .description p {
     font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .symbol {
+    width: 13%;
+  }
+
+  .cell--slim {
+    width: 24%;
+  }
+
+  .example,
+  .font--big {
+    font-size: 0.5rem;
   }
 }
 /*******************************/
